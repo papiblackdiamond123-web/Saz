@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "name": "worldstream",
+  "builds": [
+    { "src": "**/*.html", "use": "@vercel/static" },
+    { "src": "css/**", "use": "@vercel/static" },
+    { "src": "js/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/tv", "dest": "/pages/tv.html" },
+    { "src": "/radio", "dest": "/pages/radio.html" },
+    { "src": "/countries", "dest": "/pages/countries.html" },
+    { "src": "/categories", "dest": "/pages/categories.html" },
+    { "src": "/about", "dest": "/pages/about.html" },
+    { "src": "/contact", "dest": "/pages/contact.html" },
+    { "src": "/privacy", "dest": "/pages/privacy.html" },
+    { "src": "/terms", "dest": "/pages/terms.html" },
+    { "src": "/dmca", "dest": "/pages/dmca.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
+  ]
+}
