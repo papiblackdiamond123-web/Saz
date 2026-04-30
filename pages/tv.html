@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live TV Channels – WorldStream</title>
+  <meta name="description" content="Watch thousands of live TV channels from the USA, UK, India, Germany, France, Australia, Japan and more. Free streaming." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">▶</span><span class="logo-text">World<em>Stream</em></span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="tv.html" class="nav-link active">Live TV</a>
+      <a href="radio.html" class="nav-link">Live Radio</a>
+      <a href="countries.html" class="nav-link">Countries</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" id="searchToggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="container">
+      <input type="text" id="searchInput" placeholder="Search channels…" />
+      <button class="close-search" id="closeSearch">✕</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Live TV</span></div>
+    <h1>📺 Live TV Channels</h1>
+    <p>Stream live TV from 150+ countries — news, sports, entertainment, and more.</p>
+  </div>
+</section>
+
+<!-- Ad Top -->
+<div class="ad-container container">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-unit ad-leaderboard"><div class="ad-placeholder">[ AdSense Leaderboard 728×90 ]</div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="tvFilterBar">
+      <button class="filter-btn active" data-filter="all">🌐 All</button>
+      <button class="filter-btn" data-filter="news">📰 News</button>
+      <button class="filter-btn" data-filter="sports">⚽ Sports</button>
+      <button class="filter-btn" data-filter="entertainment">🎬 Entertainment</button>
+      <button class="filter-btn" data-filter="business">💼 Business</button>
+      <button class="filter-btn" data-filter="science">🔬 Science</button>
+      <button class="filter-btn" data-filter="us">🇺🇸 USA</button>
+      <button class="filter-btn" data-filter="uk">🇬🇧 UK</button>
+      <button class="filter-btn" data-filter="fr">🇫🇷 France</button>
+      <button class="filter-btn" data-filter="de">🇩🇪 Germany</button>
+      <button class="filter-btn" data-filter="in">🇮🇳 India</button>
+      <button class="filter-btn" data-filter="jp">🇯🇵 Japan</button>
+      <button class="filter-btn" data-filter="au">🇦🇺 Australia</button>
+    </div>
+    <div class="channels-grid" id="tvGrid"></div>
+    <div class="pagination">
+      <div class="page-num active">1</div>
+      <div class="page-num">2</div>
+      <div class="page-num">3</div>
+      <div class="page-num">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- Ad Bottom -->
+<div class="ad-container container">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-unit ad-leaderboard"><div class="ad-placeholder">[ AdSense Leaderboard 728×90 ]</div></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><span class="logo-icon">▶</span><span class="logo-text">World<em>Stream</em></span></a>
+      <p>The world's free live TV & radio platform.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Watch</h4>
+        <a href="tv.html">Live TV</a>
+        <a href="radio.html">Live Radio</a>
+        <a href="countries.html">Countries</a>
+        <a href="categories.html">Categories</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="dmca.html">DMCA</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Advertise</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 WorldStream. All rights reserved. We do not host any streams.</p>
+  </div>
+</footer>
+
+<div class="player-modal" id="playerModal">
+  <div class="player-overlay" id="playerOverlay"></div>
+  <div class="player-box">
+    <div class="player-header">
+      <span class="player-title" id="playerTitle"></span>
+      <button class="player-close" id="playerClose">✕</button>
+    </div>
+    <div class="player-body" id="playerBody"></div>
+    <div class="player-footer"><span id="playerCountry"></span><span id="playerCategory"></span></div>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse by Category – WorldStream</title>
+  <meta name="description" content="Browse live TV channels by category: News, Sports, Entertainment, Music, Kids, Documentary, Business and more on WorldStream." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">▶</span><span class="logo-text">World<em>Stream</em></span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="tv.html" class="nav-link">Live TV</a>
+      <a href="radio.html" class="nav-link">Live Radio</a>
+      <a href="countries.html" class="nav-link">Countries</a>
+      <a href="categories.html" class="nav-link active">Categories</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" id="searchToggle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar"><div class="container"><input type="text" id="searchInput" placeholder="Search…" /><button class="close-search" id="closeSearch">✕</button></div></div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span id="catTitle">Categories</span></div>
+    <h1 id="catTitle">📂 Categories</h1>
+    <p>Browse channels by type — news, sports, entertainment, music, and more.</p>
+  </div>
+</section>
+
+<div class="ad-container container">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-unit ad-leaderboard"><div class="ad-placeholder">[ AdSense Leaderboard 728×90 ]</div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header"><h2 class="section-title">All Categories</h2></div>
+    <div class="categories-grid" id="allCatsGrid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));"></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="catChannelsSection" style="display:none;">
+  <div class="container">
+    <div class="section-header"><h2 class="section-title" id="catChannelsTitle">Channels</h2></div>
+    <div class="channels-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<div class="ad-container container">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-unit ad-leaderboard"><div class="ad-placeholder">[ AdSense Leaderboard 728×90 ]</div></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><a href="../index.html" class="logo"><span class="logo-icon">▶</span><span class="logo-text">World<em>Stream</em></span></a><p>Free live TV & radio worldwide.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Watch</h4><a href="tv.html">Live TV</a><a href="radio.html">Live Radio</a><a href="countries.html">Countries</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="dmca.html">DMCA</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom container"><p>© 2025 WorldStream. All rights reserved.</p></div>
+</footer>
+
+<div class="player-modal" id="playerModal">
+  <div class="player-overlay" id="playerOverlay"></div>
+  <div class="player-box">
+    <div class="player-header"><span class="player-title" id="playerTitle"></span><button class="player-close" id="playerClose">✕</button></div>
+    <div class="player-body" id="playerBody"></div>
+    <div class="player-footer"><span id="playerCountry"></span><span id="playerCategory"></span></div>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // Show category channels section if a cat param is present
+  const catParam = new URLSearchParams(window.location.search).get('cat');
+  if (catParam) {
+    document.getElementById('catChannelsSection').style.display = 'block';
+    const cat = CATEGORIES.find(c => c.id === catParam);
+    if (cat) document.getElementById('catChannelsTitle').textContent = `${cat.icon} ${cat.name} Channels`;
+  }
+</script>
+</body>
+</html>
